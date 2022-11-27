@@ -19,7 +19,9 @@ export const AddNewCard: React.FC<CardFunctionality> = ({ updateDataFunction }) 
     saveData("http://localhost:5000/save", {
       name, description, url
     })
-    //if (inputNameRefference.current?.value) inputNameRefference.current.value = ""
+    if (inputNameRefference.current?.value) inputNameRefference.current.value = ""
+    if (inputDescriptionRefference.current?.value) inputDescriptionRefference.current.value = ""
+    if (inputUrlRefference.current?.value) inputUrlRefference.current.value = ""
     updateDataFunction!(await affectEffect())
   }
 

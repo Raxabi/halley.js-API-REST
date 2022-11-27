@@ -25,7 +25,7 @@ const Card: React.FC<DBResult> = ({ _id, name, description, url, useButtons, upd
         useButtons ? 
           <div id="updaters">
             <button onClick={() => handleUpdate()} type="submit">Actualizar</button>
-            <button onClick={() => handleDelete()} type="submit">Eliminar Tarea</button>
+            <button onClick={() => handleDelete()} type="submit">Eliminar distribucion</button>
           </div>
         : ''
       }

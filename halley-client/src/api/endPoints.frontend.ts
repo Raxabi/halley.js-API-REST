@@ -30,7 +30,7 @@ export const updateData = async (url: string, body: string) => await fetch(url, 
 /**
  * Delete data existing on the DataBase
  * @param url 
- * @param cardID
+ * @param cardID The id of the card that want to delete
  * @returns Fetch Promise
  */
 export const deleteData = async (url :string, cardID: string) => await fetch(url, {

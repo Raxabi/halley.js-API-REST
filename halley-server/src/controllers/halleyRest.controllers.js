@@ -19,7 +19,6 @@ export const addCard = async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
 
     const bodyResult = JSON.parse(req.body)
-    console.log(bodyResult)
 
     await distroModel.insertMany({
         name: bodyResult.name,
@@ -49,18 +48,17 @@ export const updateCard = (req, res) => {
  * @type {import("halley.http").HalleyListener}
  */
 export const deleteCard = async (req, res) => {
-    await req.formAsObjectParser()
+    await req.rawBodyParser()
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
-    req.body.forEach(async item => {
-        await distroModel.deleteOne({
-            _id: Object.keys(item)[0]
-        })
-        .then(() => {
-            res.send("Datos eliminadors")
-        })
-        .catch(() => {
-            res.status(404)
-            .send("Formato incorrecto")
-        })
+
+    await distroModel.deleteOne({
+        _id: req.body
+    })
+    .then(() => {
+        res.send("Datos eliminadors")
+    })
+    .catch(() => {
+        res.status(404)
+        .send("Formato incorrecto")
     })
 }

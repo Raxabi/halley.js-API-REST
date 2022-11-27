@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "halley.http": "^1.2.0",
+    "halley.http": "1.2.1-development",
     "mongoose": "^6.7.2"
   },
   "devDependencies": {

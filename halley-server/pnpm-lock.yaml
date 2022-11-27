@@ -2,13 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   dotenv: ^16.0.3
-  halley.http: ^1.2.0
+  halley.http: 1.2.1-development
   mongoose: ^6.7.2
   nodemon: ^2.0.20
 
 dependencies:
   dotenv: 16.0.3
-  halley.http: 1.2.0
+  halley.http: 1.2.1-development
   mongoose: 6.7.3
 
 devDependencies:
@@ -972,8 +972,8 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /halley.http/1.2.0:
-    resolution: {integrity: sha512-oNHoiMt4NtdYN8M0nIpDE3dvOkmkLbKlG+1fDax0Dhu8B1tK2es0Tt4YE+G3a4F6P6c7MpEBziPwV1SBu6gN9Q==}
+  /halley.http/1.2.1-development:
+    resolution: {integrity: sha512-UsAjZI7ExewqjrldpAvB4MPC7/mDs7SxmJRfkqOZeArqNMRe+v9/B+LoreeeFd6iEXCn6NXESzk+j4V2C/z/8w==}
     dev: false
 
   /has-flag/3.0.0:
