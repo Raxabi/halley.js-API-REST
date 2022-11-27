@@ -1,3 +1,9 @@
-#container {
-    
+#card-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    color: black;
 }

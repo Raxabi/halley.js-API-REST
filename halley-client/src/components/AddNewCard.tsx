@@ -1,30 +1,47 @@
 import React, { FormEvent, useState, createRef } from "react"
 import { saveData } from "../api/endPoints.frontend"
 import { affectEffect } from "../api/worksAroundCardQuantityEffect"
-import { CardFunctionality } from "./interfaces/CardContainer"
+import { CardFunctionality } from "./interfaces/CardFunctionality"
 import "../assets/NewCard.css"
 
-export const AddNewCard: React.FC<CardFunctionality> = ({ updateData }) => {
+export const AddNewCard: React.FC<CardFunctionality> = ({ updateDataFunction }) => {
 
-  const [value, setValue] = useState("")
+  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
+  const [url, setUrl] = useState("")
 
-  const inputRefference = createRef<HTMLInputElement>()
+  const inputNameRefference = createRef<HTMLInputElement>()
+  const inputDescriptionRefference = createRef<HTMLTextAreaElement>()
+  const inputUrlRefference = createRef<HTMLInputElement>()
 
   const saveFormData = async (e: FormEvent) => {
     e.preventDefault();
-    saveData("http://localhost:5000/save", value)
-    updateData!(await affectEffect())
-    if (inputRefference.current?.value) inputRefference.current.value = ""
+    saveData("http://localhost:5000/save", {
+      name, description, url
+    })
+    //if (inputNameRefference.current?.value) inputNameRefference.current.value = ""
+    updateDataFunction!(await affectEffect())
   }
 
   return (
-    <div>
+    <div id="save-new-card-form">
         <form onSubmit={saveFormData} method="post">
           <label htmlFor="name">Nombre de la distribucion</label><br/>
           <input
             type="text"
-            ref={inputRefference}
-            onChange={e => setValue(e.target.value)}
+            ref={inputNameRefference}
+            onChange={e => setName(e.target.value)}
+          /><br/>
+          <label htmlFor="description">Pequeña descripcion de la distribucion</label><br/>
+          <textarea
+            ref={inputDescriptionRefference}
+            onChange={e => setDescription(e.target.value)}
+          /><br/>
+          <label htmlFor="url">URL a la pagina oficial de la distribucion (si existe)</label><br/>
+          <input
+            type="text"
+            ref={inputUrlRefference}
+            onChange={e => setUrl(e.target.value)}
           /><br/>
           <button id="save-button" type="submit">Guardar distribucion</button>
         </form>

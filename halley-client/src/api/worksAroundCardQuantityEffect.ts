@@ -1,7 +1,7 @@
-import { getAll } from "../api/endPoints.frontend"
+import { getData } from "./endPoints.frontend"
 
-export const affectEffect = (): Promise<any> => (
-    getAll("http://localhost:5000/getAll")
+export const affectEffect = () => (
+    getData("http://localhost:5000/getAll")
     .then(async data => (
         await data.json()
     ))

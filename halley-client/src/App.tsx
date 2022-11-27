@@ -11,14 +11,14 @@ const Main = () => {
   const fetchData = async () => setData(await affectEffect())
 
   useEffect(() => {
-    fetchData();
+    fetchData()
   }, [])
 
   return (
     <Fragment>
       <NavBar />
-      <CardsContainer data={data} updateData={setData} />
-      <AddNewCard updateData={setData} />
+      <CardsContainer data={data} updateDataFunction={setData} />
+      <AddNewCard updateDataFunction={setData} />
     </Fragment>
   )
 }

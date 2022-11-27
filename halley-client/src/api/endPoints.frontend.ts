@@ -3,7 +3,7 @@
  * @param url 
  * @returns Fetch Promise
  */
-export const getAll = async (url: string) => await fetch(url)
+export const getData = async (url: string) => await fetch(url)
 
 /**
  * Save new data to de DataBase
@@ -11,16 +11,16 @@ export const getAll = async (url: string) => await fetch(url)
  * @param body 
  * @returns Fetch Promise
  */
-export const saveData = async (url: string, body: string) => await fetch(url, {
+export const saveData = async (url: string, body: object) => await fetch(url, {
     method: "POST",
-    body
+    body: JSON.stringify(body)
 })
 
 /**
  * Update existing data on the DataBase
  * @param url 
  * @param body 
- * @returns 
+ * @returns Fetch Promise
  */
 export const updateData = async (url: string, body: string) => await fetch(url, {
     method: "POST",
@@ -30,10 +30,10 @@ export const updateData = async (url: string, body: string) => await fetch(url, 
 /**
  * Delete data existing on the DataBase
  * @param url 
- * @param body 
- * @returns 
+ * @param cardID
+ * @returns Fetch Promise
  */
-export const deleteData = async (url :string, body: string) => await fetch(url, {
+export const deleteData = async (url :string, cardID: string) => await fetch(url, {
     method: "POST",
-    body
+    body: cardID
 })
