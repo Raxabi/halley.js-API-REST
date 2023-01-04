@@ -1,0 +1,53 @@
+#save-new-card-form {
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    border: #646cff 2px solid;
+    padding: 30px;
+}
+
+#save-new-card-form > form > input {
+    padding-right: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-color: gray;
+    border-radius: 5px;
+
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: 15px;
+}
+
+#save-new-card-form > form > textarea {
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    height: 150px;
+}
+
+#save-new-card-form > form > input {
+    outline: 4px #646cff auto -webkit-focus-ring-color;
+}
+
+#input-checkbox {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 1366px) {
+    #save-new-card-form {
+        width: fit-content;
+    }
+
+    #save-new-card-form > form > textarea {
+        width: 200px;
+        height: 80px;
+    }
+}

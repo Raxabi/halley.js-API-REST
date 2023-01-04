@@ -1,0 +1,12 @@
+#main-components-container {
+    width: max-content;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 4rem;
+    margin-top: 10%;
+}
+
+#main-components-container > #card-container {
+    margin-top: auto;
+    margin-bottom: auto;
+}

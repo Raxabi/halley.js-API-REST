@@ -1,0 +1,10 @@
+#card-container {
+    margin-bottom: 20px;
+    height: max-content;
+    max-width: max-content;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 1rem;
+    color: black;
+}
